@@ -1,5 +1,4 @@
-﻿using System;
-namespace ECommerce.API.Domain
+﻿namespace ECommerce.API.Domain
 {
     public class Product
     {
