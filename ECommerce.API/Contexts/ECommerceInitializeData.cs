@@ -48,6 +48,9 @@ namespace ECommerce.API.Contexts
                     new Product { Name = "Toyota 2020", Description = "Toyota Version 2020 - line 1", Price = 40000, CategoryId = 1, BrandId = 4 },
                     new Product { Name = "Toyota 2019", Description = "Toyota Version 2019 - line 1", Price = 35000, CategoryId = 1, BrandId = 4 },
                 };
+
+                context.AddRange(products);
+                context.SaveChanges();
             }
         }
     }
