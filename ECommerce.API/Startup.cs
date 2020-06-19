@@ -22,7 +22,7 @@ namespace ECommerce.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ECommerceContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("ECommerceContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("ECommerceContext")));
 
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "E-Commerce", Version = "v1" }); });
