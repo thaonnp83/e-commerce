@@ -22,12 +22,13 @@ namespace ECommerce.API.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet]
-        public IActionResult GetProductsAsync()
+        [HttpGet("{id}")]
+        public IActionResult GetProductAsync(int id)
         {
-            return Ok();
+            return Ok(id);
         }
 
+        [HttpPost]
         public async Task<IActionResult> AddProductAsync(ProductViewModel productViewModel)
         {
             var newProduct = new Product
@@ -41,8 +42,9 @@ namespace ECommerce.API.Controllers
                 };
 
             await _dbContext.Products.AddAsync(newProduct);
-           
-            return CreatedAtAction("create", new { id = newProduct.Id });
+            await _dbContext.SaveChangesAsync();
+
+            return Created($"/api/product/{newProduct.Id}", newProduct);
         }
     }
 }
