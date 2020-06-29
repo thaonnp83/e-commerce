@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "ECommerce.IdentityService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
