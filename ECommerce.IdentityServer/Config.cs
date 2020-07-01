@@ -17,10 +17,19 @@ namespace ECommerce.IdentityServer
 
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
-            { };
+            { new ApiScope("e-commerce-api", "ECommerce API") };
 
         public static IEnumerable<Client> Clients =>
-            new Client[] 
-            { };
+            new Client[]
+            {
+                new Client
+                {
+                    ClientId = "Admin-Service",
+                    ClientName = "Client Service",
+                    ClientSecrets = new [] { new Secret("Admin-Service".Sha256())},
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedScopes = { "e-commerce-api" }
+                }
+            };
     }
 }
