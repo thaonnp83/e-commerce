@@ -10,12 +10,12 @@ namespace ECommerce.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class IdentityController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GetCateogriesAsync()
+        public IActionResult Get()
         {
-            return Ok();
+            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
         }
     }
 }

@@ -30,7 +30,7 @@ namespace ECommerce.API
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "E-Commerce", Version = "v1" }); });
             services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
                     {
-                        options.Authority = "http://localhost:51194";
+                        options.Authority = "http://localhost:5001";
                         options.TokenValidationParameters = new TokenValidationParameters
                         {
                             ValidateAudience = false
